@@ -102,7 +102,7 @@ RUN apt-get update && \
 # https://www.enricozini.org/blog/2020/qt5/build-qt5-cross-builder-with-raspbian-sysroot-compiling-with-the-sysroot-continued/
 RUN dpkg --purge libraspberrypi-dev
 
-FROM debian:buster
+FROM ubuntu:18.04
 
 # This list can most likely be slimmed down *a lot* but that's for another day.
 RUN apt-get update && \
@@ -139,7 +139,7 @@ RUN apt-get update && \
         libgcrypt20-dev \
         libgles2-mesa-dev \
         libinput-dev \
-        libjpeg62-turbo-dev \
+        libjpeg62-dev \
         libjsoncpp-dev \
         libminizip-dev \
         libnss3 \
