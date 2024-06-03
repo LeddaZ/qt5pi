@@ -14,7 +14,7 @@ BUILD_TARGET=/build
 SRC=/src
 QT_BRANCH="6.0.0"
 DEBIAN_VERSION=$(lsb_release -cs)
-MAKE_CORES="$(expr $(nproc) + 2)"
+MAKE_CORES="$(nproc --all)"
 
 mkdir -p "$BUILD_TARGET"
 mkdir -p "$SRC"
