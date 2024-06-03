@@ -172,7 +172,7 @@ function build_qt () {
             -qpa eglfs \
             -qt-pcre \
             -reduce-exports \
-            -release \
+            -debug \
             -skip qtactiveqt \
             -skip qtandroidextras \
             -skip qtcanvas3d \
