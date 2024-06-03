@@ -127,7 +127,7 @@ function build_qt () {
         elif [ "$1" = "pi3" ]; then
             local BUILD_ARGS=(
                 "-device" "linux-rasp-pi3-g++"
-		"-opengl" "es2"
+                "-opengl" "es2"
             )
             patch_qt "linux-rasp-pi3-g++"
 
@@ -178,7 +178,7 @@ function build_qt () {
             -skip qtcanvas3d \
             -skip qtdatavis3d \
             -skip qtgamepad \
-	    -skip qtsensors \
+            -skip qtsensors \
             -skip qtlocation \
             -skip qtlottie \
             -skip qtmacextras \
@@ -194,15 +194,15 @@ function build_qt () {
             -skip qtwebview \
             -skip qtwinextras \
             -skip qtx11extras \
-	    -skip qtwebsockets \
-	    -skip qtremoteobjects \
-	    -skip qtconnectivity \
-	    -skip qtnetworkauth \
-	    -skip qtwebchannel \
-	    -skip qtwebglplugin \
-	    -skip qtwebengine \
+            -skip qtwebsockets \
+            -skip qtremoteobjects \
+            -skip qtconnectivity \
+            -skip qtnetworkauth \
+            -skip qtwebchannel \
+            -skip qtwebglplugin \
+            -skip qtwebengine \
             -skip qtwayland \
-	    -system-freetype \
+            -system-freetype \
             -system-libjpeg \
             -system-libpng \
             -system-zlib \
@@ -220,12 +220,12 @@ function build_qt () {
         pushd "$SRC_DIR"
         tar cfz "$BUILD_TARGET/qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz" qt5pi
         popd
-	tar cfz "$BUILD_TARGET/sysroot-qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz" /sysroot
+        tar cfz "$BUILD_TARGET/sysroot-qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz" /sysroot
 
         pushd "$BUILD_TARGET"
         sha256sum "qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz" > "qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz.sha256"
         sha256sum "sysroot-qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz" > "sysroot-qt5-$QT_BRANCH-$DEBIAN_VERSION-$1.tar.gz.sha256"
-	popd
+        popd
     else
         echo "QT Build already exist."
     fi
@@ -238,4 +238,3 @@ fetch_cross_compile_tool
 fetch_rpi_firmware
 
 build_qt "$TARGET"
-

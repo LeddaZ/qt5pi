@@ -9,4 +9,3 @@ Set TARGET in ```Dockerfile``` to prefereable Raspberry Pi and execute the comma
 docker build -t qt-builder .
 docker run --rm -t -v ~/tmp/qt-src:/src -v ~/tmp/qt-build:/build qt-builder
 ```
-
