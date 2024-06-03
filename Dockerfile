@@ -188,5 +188,5 @@ ENV CCACHE_MAXSIZE 10G
 ENV CCACHE_DIR /src/ccache
 
 COPY build_qt5.sh /usr/local/bin/
-ENV TARGET='pi3'
+ENV TARGET='pi2'
 CMD /usr/local/bin/build_qt5.sh
